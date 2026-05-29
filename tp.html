@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Adithya Ravindra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo">adi<span>.dev</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tp.html" class="active">Portfolio</a></li>
+      <li><a href="qual.html">Qualifications</a></li>
+      <li><a href="svc.html">Service</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-hero section-shell">
+      <p class="eyebrow">Technical Portfolio</p>
+      <h1>Projects I've Built</h1>
+      <p>
+        Systems, tools, and research spanning OS internals, distributed cloud platforms,
+        spacecraft telemetry, deep learning, and compiler infrastructure. The list below keeps
+        the current portfolio projects and adds the Python JIT compiler.
+      </p>
+    </section>
+
+    <section class="projects-section section-shell">
+      <div class="projects-list">
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/xv6.png" alt="RISC-V operating system kernel">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">01</span>
+              <span class="project-cat">OS / Kernel</span>
+            </div>
+            <h2>Bare-Metal RISC-V Operating System</h2>
+            <p>
+              A bare-metal OS kernel in C++ targeting the QEMU virt machine in M-mode, with
+              boot sequence, memory layout, runtime environment, UART serial I/O, trap handling,
+              assembly entry/exit stubs, CSR register management, and typed exception and
+              interrupt dispatch. Earlier portfolio work also covered virtual memory, process
+              scheduling, system calls, context switching, and QEMU-based validation.
+            </p>
+            <ul>
+              <li>Configured control and status registers for trap vectors, interrupt delegation, and privilege-mode transitions.</li>
+              <li>Managed the hardware/software boundary directly in RISC-V assembly and C++.</li>
+              <li>Designed modular kernel subsystems for memory, scheduling, traps, and system call behavior.</li>
+            </ul>
+            <div class="tag-row">
+              <span>C++</span><span>RISC-V Assembly</span><span>QEMU</span><span>Kernel Development</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/solo-grind-generated.png" alt="Generated Solo Grind cloud productivity project artwork">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">02</span>
+              <span class="project-cat">Cloud / Distributed</span>
+            </div>
+            <h2>Solo Grind - Cloud-Native Productivity Platform</h2>
+            <p>
+              A gamified productivity platform architected across authentication, tasks,
+              gamification, analytics, and notifications, enabling fault isolation and
+              zero-downtime rolling deployments. Services are backed by PostgreSQL and deployed
+              with Terraform-provisioned AWS infrastructure.
+            </p>
+            <ul>
+              <li>Provisioned reproducible staging and production environments with Terraform, reducing setup from hours to under 10 minutes.</li>
+              <li>Integrated Cognito, API Gateway, S3, SNS/SQS, EKS, CloudWatch, and containerized service builds.</li>
+              <li>Designed a PostgreSQL-backed gamification engine with XP, streaks, and level progression using indexed queries for sub-50ms simulated responses.</li>
+              <li>Configured GitHub Actions CI/CD pipelines with automated container builds and staged rollout, cutting manual deployment steps by about 80%.</li>
+            </ul>
+            <div class="tag-row">
+              <span>AWS</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/asl.png" alt="ASL sign recognition system">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">03</span>
+              <span class="project-cat">ML / Computer Vision</span>
+            </div>
+            <h2>ASL Sign Recognition System</h2>
+            <p>
+              A scalable ASL recognition platform built with Python, PyTorch, Azure ML,
+              Azure Blob Storage, OpenCV, and LangChain. It unifies WLASL, ASL Citizen, and
+              ASL Alphabet data into a cloud-backed training workflow with 100K+ labeled samples
+              and 2,000+ sign classes.
+            </p>
+            <ul>
+              <li>Designed Azure ML GPU training with distributed data loading from Azure Blob Storage, reducing per-epoch training time by over 60% versus local runs.</li>
+              <li>Built a frozen ResNet50, temporal transformer, BiGRU, and attention pooling architecture under a 4GB VRAM constraint.</li>
+              <li>Addressed a 10:1 class imbalance with mixup augmentation and weighted sampling, improving minority-class recall by about 15%.</li>
+              <li>Resolved production inference issues including sklearn version mismatches and sigmoid overflow in the hand tracker across three environments.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Python</span><span>PyTorch</span><span>Azure ML</span><span>Azure Blob Storage</span><span>OpenCV</span><span>LangChain</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/telemetry.gif" alt="Real-time telemetry dashboard">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">04</span>
+              <span class="project-cat">Systems / Embedded</span>
+            </div>
+            <h2>Real-Time Telemetry &amp; Control Interface</h2>
+            <p>
+              A real-time telemetry platform unifying Arduino hardware sensors, Basilisk
+              spacecraft simulation outputs, and system health metrics into a browser-based
+              mission-control dashboard.
+            </p>
+            <ul>
+              <li>Designed a custom WebSocket backend sustaining 50+ Hz sensor ingestion with bidirectional command and telemetry flows.</li>
+              <li>Kept end-to-end display latency under 200ms under continuous load.</li>
+              <li>Integrated OpenMCT's plugin API with simulation and hardware inputs for a live interactive demo.</li>
+              <li>Developed data acquisition, validation, and anomaly analysis workflows across telemetry streams.</li>
+            </ul>
+            <div class="tag-row">
+              <span>C++</span><span>Python</span><span>JavaScript</span><span>OpenMCT</span><span>Basilisk</span><span>Arduino</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/quest3.png" alt="Mixed reality research">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">05</span>
+              <span class="project-cat">Research / Mixed Reality</span>
+            </div>
+            <h2>Mixed Reality - Matrix Visualization</h2>
+            <p>
+              NSF RETTL-funded undergraduate research developing XR educational tools on Meta
+              Quest 3 to make matrix transformations and rotations tangible through interactive
+              gameplay and live 3D visualization.
+            </p>
+            <ul>
+              <li>Built an asteroid shooter game in Unity to teach matrix transformations through interactive XR gameplay.</li>
+              <li>Engineered external camera and telemetry pipelines for real-time matrix visualization and spatial tracking.</li>
+              <li>Integrated external sensor feeds with Unity XR toolkit to synchronize physical and virtual coordinate systems.</li>
+              <li>Reduced frame latency by 22% through profiling, rendering optimization, and sensor fusion improvements.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Unity</span><span>C#</span><span>Meta Quest 3</span><span>XR</span><span>Spatial Tracking</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/zip.png" alt="Parallel zip utility">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">06</span>
+              <span class="project-cat">Systems</span>
+            </div>
+            <h2>Parallel Zip Utility</h2>
+            <p>
+              A parallel compression utility written in C++ using POSIX threads with condition
+              variables for producer-consumer synchronization. It implements LZ77-style
+              compression, a custom binary archive format, entropy-based encoding selection,
+              and Arch Linux packaging via pacman.
+            </p>
+            <ul>
+              <li>Designed a ThreadPool with condition variables for scalable multi-file compression in Linux user space.</li>
+              <li>Implemented a custom binary archive format with a redesigned FileHeader for extensibility.</li>
+              <li>Added entropy detection for intelligent encoding selection between compressed and passthrough modes.</li>
+            </ul>
+            <div class="tag-row">
+              <span>C++</span><span>POSIX Threads</span><span>Linux</span><span>LZ77</span><span>Arch Linux</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <div class="project-media">
+            <img src="images/python-jit-generated.png" alt="Generated Python JIT compiler pipeline artwork">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">07</span>
+              <span class="project-cat">Compilers</span>
+            </div>
+            <h2>Python JIT Compiler</h2>
+            <p>
+              A JIT compiler for a subset of Python, implementing a full pipeline from lexing
+              and parsing through IR generation, optimization passes, and native code emission.
+            </p>
+            <ul>
+              <li>Applied local value numbering, constant folding, copy propagation, and dead code elimination to reduce redundant IR instructions.</li>
+              <li>Implemented a linear-scan register allocator with spilling using Belady's MIN heuristic to minimize spill cost.</li>
+              <li>Produced efficient register assignments for compiled function bodies using Python, C++, and ILOC IR.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Python</span><span>C++</span><span>ILOC IR</span><span>Register Allocation</span><span>Compiler Optimization</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-copy">© 2026 Adithya Ravindra</span>
+    <div class="footer-links">
+      <a href="mailto:adi22122004@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/adiravindra" target="_blank">LinkedIn</a>
+      <a href="https://github.com/adinapoleon" target="_blank">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
