@@ -390,7 +390,6 @@ h3 {
   justify-items: center;
   min-width: 0;
   text-align: center;
-  padding-bottom: 2rem;
 }
 
 .row-heading {
@@ -582,15 +581,11 @@ h3 {
 .skills-grid,
 .credential-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--gap-card);
   width: min(100%, 1040px);
   margin: 0 auto;
-}
-
-.skills-grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: min(100%, 1180px);
+  padding-top: 2rem;
 }
 
 .credential-grid {

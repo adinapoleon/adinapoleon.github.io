@@ -8,7 +8,7 @@
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="index.html" class="nav-logo">adi<span>.dev</span></a>
+    <a href="index.html" class="nav-logo">adinapoleon<span>.github.io</span></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="tp.html" class="active">Portfolio</a></li>
@@ -30,6 +30,34 @@
 
     <section class="projects-section section-shell">
       <div class="projects-list">
+                <article class="project-row">
+          <div class="project-media">
+            <img src="images/asl.png" alt="ASL sign recognition system">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <span class="project-num">03</span>
+              <span class="project-cat">ML / Computer Vision</span>
+            </div>
+            <h2>ASL Sign Recognition System</h2>
+            <p>
+              A scalable ASL recognition platform built with Python, PyTorch, Azure ML,
+              Azure Blob Storage, OpenCV, and LangChain. It unifies WLASL, ASL Citizen, and
+              ASL Alphabet data into a cloud-backed training workflow with 100K+ labeled samples
+              and 2,000+ sign classes.
+            </p>
+            <ul>
+              <li>Designed Azure ML GPU training with distributed data loading from Azure Blob Storage, reducing per-epoch training time by over 60% versus local runs.</li>
+              <li>Built a frozen ResNet50, temporal transformer, BiGRU, and attention pooling architecture under a 4GB VRAM constraint.</li>
+              <li>Addressed a 10:1 class imbalance with mixup augmentation and weighted sampling, improving minority-class recall by about 15%.</li>
+              <li>Resolved production inference issues including sklearn version mismatches and sigmoid overflow in the hand tracker across three environments.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Python</span><span>PyTorch</span><span>Azure ML</span><span>Azure Blob Storage</span><span>OpenCV</span><span>LangChain</span>
+            </div>
+          </div>
+        </article>
+
         <article class="project-row">
           <div class="project-media">
             <img src="images/xv6.png" alt="RISC-V operating system kernel">
@@ -82,34 +110,6 @@
             </ul>
             <div class="tag-row">
               <span>AWS</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-row">
-          <div class="project-media">
-            <img src="images/asl.png" alt="ASL sign recognition system">
-          </div>
-          <div class="project-body">
-            <div class="project-meta-row">
-              <span class="project-num">03</span>
-              <span class="project-cat">ML / Computer Vision</span>
-            </div>
-            <h2>ASL Sign Recognition System</h2>
-            <p>
-              A scalable ASL recognition platform built with Python, PyTorch, Azure ML,
-              Azure Blob Storage, OpenCV, and LangChain. It unifies WLASL, ASL Citizen, and
-              ASL Alphabet data into a cloud-backed training workflow with 100K+ labeled samples
-              and 2,000+ sign classes.
-            </p>
-            <ul>
-              <li>Designed Azure ML GPU training with distributed data loading from Azure Blob Storage, reducing per-epoch training time by over 60% versus local runs.</li>
-              <li>Built a frozen ResNet50, temporal transformer, BiGRU, and attention pooling architecture under a 4GB VRAM constraint.</li>
-              <li>Addressed a 10:1 class imbalance with mixup augmentation and weighted sampling, improving minority-class recall by about 15%.</li>
-              <li>Resolved production inference issues including sklearn version mismatches and sigmoid overflow in the hand tracker across three environments.</li>
-            </ul>
-            <div class="tag-row">
-              <span>Python</span><span>PyTorch</span><span>Azure ML</span><span>Azure Blob Storage</span><span>OpenCV</span><span>LangChain</span>
             </div>
           </div>
         </article>
