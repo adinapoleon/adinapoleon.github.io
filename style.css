@@ -968,3 +968,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Resume projects without a supplied screenshot use the full card width. */
+.project-row-text {
+  grid-template-columns: minmax(0, 1fr);
+}

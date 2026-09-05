@@ -22,76 +22,70 @@
       <p class="eyebrow">Technical Portfolio</p>
       <h1>Projects I've Built</h1>
       <p>
-        Systems, tools, and research spanning OS internals, distributed cloud platforms,
-        spacecraft telemetry, deep learning, and compiler infrastructure.   
+        Agentic engineering, review intelligence, sign-language recognition, and systems software,
+        alongside earlier work in cloud platforms, mixed reality, and compilers.
       </p>
     </section>
 
     <section class="projects-section section-shell">
       <div class="projects-list">
-                <article class="project-row">
-          <div class="project-media">
-            <img src="images/asl.png" alt="ASL sign recognition system">
-          </div>
+        <article class="project-row project-row-text" id="fde">
+
           <div class="project-body">
-            <div class="project-meta-row">
-              <span class="project-num">01</span>
-              <span class="project-cat">ML / Computer Vision</span>
-            </div>
-            <h2>ASL Sign Recognition System</h2>
-            <p>
-              A scalable ASL recognition platform built with Python, PyTorch, Azure ML Studio,
-              OpenCV. It unifies WLASL, ASL Citizen, and
-              ASL Alphabet data into a cloud-backed training workflow with 100K+ labeled samples
-              and 2,000+ sign classes.
-            </p>
-            <ul>
-              <li>Designed Azure ML GPU training with distributed data loading from Azure Blob Storage, reducing per-epoch training time by over 60% versus local runs.</li>
-              <li>Built a frozen ResNet50, temporal transformer, BiGRU, and attention pooling architecture under a 4GB VRAM constraint.</li>
-              <li>Addressed a 10:1 class imbalance with mixup augmentation and weighted sampling, improving minority-class recall by about 15%.</li>
-              <li>Resolved production inference issues including sklearn version mismatches and sigmoid overflow in the hand tracker across three environments.</li>
-            </ul>
-            <div class="tag-row">
-              <span>Python</span><span>PyTorch</span><span>Azure ML Studio</span><span>Azure Blob Storage</span><span>OpenCV</span><span>Kaggle</span>
-            </div>
+            <div class="project-meta-row"><span class="project-num">01</span><span class="project-cat">AI / Agentic Engineering</span></div>
+            <h2>Forward Deployment Engine (FDE)</h2><p>An agentic engineering platform for automating forward-deployed engineering workflows, built with AWS Bedrock, FastAPI, Next.js, MongoDB, and SQLite.</p>
+            <ul><li>Built isolated project environments with persistent conversational context, file upload and exploration, integrated code and document editing, and AI-assisted planning.</li><li>Designed an extensible agent architecture for research, GitHub, Jira, builder, and testing workflows.</li><li>Deployed cloud components through AWS Amplify, EC2, S3, and Secrets Manager.</li></ul>
+            <div class="tag-row"><span>AWS Bedrock</span><span>FastAPI</span><span>Next.js</span><span>MongoDB</span><span>SQLite</span></div>
           </div>
         </article>
 
-        <article class="project-row">
-          <div class="project-media">
-            <img src="images/xv6.png" alt="RISC-V operating system kernel">
-          </div>
+        <article class="project-row" id="asl">
+          <div class="project-media"><img src="images/asl.png" alt="ASL Sign Recognition System"></div>
           <div class="project-body">
-            <div class="project-meta-row">
-              <span class="project-num">02</span>
-              <span class="project-cat">OS / Kernel</span>
-            </div>
-            <h2>Bare-Metal RISC-V Operating System</h2>
-            <p>
-              A bare-metal OS kernel in C++ targeting the QEMU virt machine in M-mode, with
-              boot sequence, memory layout, runtime environment, UART serial I/O, trap handling,
-              assembly entry/exit stubs, CSR register management, and typed exception and
-              interrupt dispatch. Earlier portfolio work also covered virtual memory, process
-              scheduling, system calls, context switching, and QEMU-based validation.
-            </p>
-            <ul>
-              <li>Configured control and status registers for trap vectors, interrupt delegation, and privilege-mode transitions.</li>
-              <li>Managed the hardware/software boundary directly in RISC-V assembly and C++.</li>
-              <li>Designed modular kernel subsystems for memory, scheduling, traps, and system call behavior.</li>
-            </ul>
-            <div class="tag-row">
-              <span>C++</span><span>RISC-V Assembly</span><span>QEMU</span><span>Kernel Development</span>
-            </div>
+            <div class="project-meta-row"><span class="project-num">02</span><span class="project-cat">ML / Computer Vision</span></div>
+            <h2>ASL Sign Recognition System</h2><p>A large-scale sign-language recognition pipeline consolidating more than 100,000 labeled samples from multiple public datasets.</p>
+            <ul><li>Built a hybrid ResNet50, Transformer, BiGRU, and attention-based architecture in PyTorch to learn spatial and temporal features.</li><li>Used OpenCV, Azure Machine Learning, and Azure Blob Storage for preprocessing, training, and dataset management.</li></ul>
+            <div class="tag-row"><span>Python</span><span>PyTorch</span><span>OpenCV</span><span>Azure ML</span><span>Azure Blob Storage</span></div>
           </div>
         </article>
 
-        <article class="project-row">
+        <article class="project-row" id="riscv">
+          <div class="project-media"><img src="images/xv6.png" alt="Bare-Metal RISC-V Operating System"></div>
+          <div class="project-body">
+            <div class="project-meta-row"><span class="project-num">03</span><span class="project-cat">OS / Kernel</span></div>
+            <h2>Bare-Metal RISC-V Operating System</h2><p>An operating system kernel built from scratch in C++ and RISC-V assembly for QEMU, without external runtime dependencies.</p>
+            <ul><li>Implemented bootstrapping, memory layout, and UART serial I/O to establish the kernel execution environment.</li><li>Built trap and interrupt handling, control and status register management, and machine-to-supervisor privilege transitions.</li></ul>
+            <div class="tag-row"><span>C++</span><span>RISC-V Assembly</span><span>QEMU</span><span>Kernel Development</span></div>
+          </div>
+        </article>
+
+        <article class="project-row project-row-text" id="reviewinsight">
+
+          <div class="project-body">
+            <div class="project-meta-row"><span class="project-num">04</span><span class="project-cat">AI / Review Intelligence</span></div>
+            <h2>ReviewInsight</h2><p>An agentic review intelligence platform that converts unstructured customer reviews into structured business insights.</p>
+            <ul><li>Integrated Google Maps and Amazon review ingestion using FastAPI, Streamlit, LangChain, and Groq-powered agents.</li><li>Built sentiment analysis, recurring-theme detection, evidence retrieval, and recommendation workflows that connect model outputs directly to source reviews.</li></ul>
+            <div class="tag-row"><span>FastAPI</span><span>Streamlit</span><span>LangChain</span><span>Groq</span></div>
+          </div>
+        </article>
+
+        <article class="project-row" id="telemetry">
+          <div class="project-media"><img src="images/telemetry.gif" alt="Real-Time Telemetry and Control Interface"></div>
+          <div class="project-body">
+            <div class="project-meta-row"><span class="project-num">05</span><span class="project-cat">Systems / Embedded</span></div>
+            <h2>Real-Time Telemetry and Control Interface</h2><p>A browser-based mission-control platform unifying Arduino sensor telemetry, Basilisk spacecraft simulation outputs, and system health metrics.</p>
+            <ul><li>Built a bidirectional WebSocket communication layer for low-latency telemetry and command delivery.</li><li>Integrated data streams into OpenMCT for real-time monitoring and control.</li></ul>
+            <div class="tag-row"><span>C++</span><span>Python</span><span>JavaScript</span><span>OpenMCT</span><span>Basilisk</span><span>Arduino</span></div>
+          </div>
+        </article>
+
+<article class="project-row">
           <div class="project-media">
             <img src="images/solo-grind-generated.png" alt="Generated Solo Grind cloud productivity project artwork">
           </div>
           <div class="project-body">
             <div class="project-meta-row">
-              <span class="project-num">03</span>
+              <span class="project-num">06</span>
               <span class="project-cat">Cloud / Distributed</span>
             </div>
             <h2>Solo Grind - Cloud-Native Productivity Platform</h2>
@@ -113,40 +107,13 @@
           </div>
         </article>
 
-        <article class="project-row">
-          <div class="project-media">
-            <img src="images/telemetry.gif" alt="Real-time telemetry dashboard">
-          </div>
-          <div class="project-body">
-            <div class="project-meta-row">
-              <span class="project-num">04</span>
-              <span class="project-cat">Systems / Embedded</span>
-            </div>
-            <h2>Real-Time Telemetry &amp; Control Interface</h2>
-            <p>
-              A real-time telemetry platform unifying Arduino hardware sensors, Basilisk
-              spacecraft simulation outputs, and system health metrics into a browser-based
-              mission-control dashboard.
-            </p>
-            <ul>
-              <li>Designed a custom WebSocket backend sustaining 50+ Hz sensor ingestion with bidirectional command and telemetry flows.</li>
-              <li>Kept end-to-end display latency under 200ms under continuous load.</li>
-              <li>Integrated OpenMCT's plugin API with simulation and hardware inputs for a live interactive demo.</li>
-              <li>Developed data acquisition, validation, and anomaly analysis workflows across telemetry streams.</li>
-            </ul>
-            <div class="tag-row">
-              <span>C++</span><span>Python</span><span>JavaScript</span><span>OpenMCT</span><span>Basilisk</span><span>Arduino</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-row">
+<article class="project-row">
           <div class="project-media">
             <img src="images/quest3.png" alt="Mixed reality research">
           </div>
           <div class="project-body">
             <div class="project-meta-row">
-              <span class="project-num">05</span>
+              <span class="project-num">07</span>
               <span class="project-cat">Research / Mixed Reality</span>
             </div>
             <h2>Mixed Reality - Matrix Visualization</h2>
@@ -167,13 +134,13 @@
           </div>
         </article>
 
-        <article class="project-row">
+<article class="project-row">
           <div class="project-media">
             <img src="images/zip.png" alt="Parallel zip utility">
           </div>
           <div class="project-body">
             <div class="project-meta-row">
-              <span class="project-num">06</span>
+              <span class="project-num">08</span>
               <span class="project-cat">Systems</span>
             </div>
             <h2>Parallel Zip Utility</h2>
@@ -193,13 +160,13 @@
           </div>
         </article>
 
-        <article class="project-row">
+<article class="project-row">
           <div class="project-media">
             <img src="images/python-jit-generated.png" alt="Generated Python JIT compiler pipeline artwork">
           </div>
           <div class="project-body">
             <div class="project-meta-row">
-              <span class="project-num">07</span>
+              <span class="project-num">09</span>
               <span class="project-cat">Compilers</span>
             </div>
             <h2>Python JIT Compiler</h2>
